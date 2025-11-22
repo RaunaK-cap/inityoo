@@ -54,7 +54,7 @@ export const Footer: React.FC = () => {
 
        
           <div
-            className=" grid grid-cols-2 gap-10 md:grid-cols-2 md:gap-12 md:col-span-2">
+            className="grid grid-cols-2 gap-10 md:grid-cols-2 md:gap-12 md:col-span-2">
             <div>
               <h4 className=" text-slate-900 dark:text-white mb-3">
                 Services
