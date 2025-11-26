@@ -1,27 +1,45 @@
 "use client"
 
 import { motion } from "framer-motion"
+import { useState, useEffect } from "react"
 import { TextFlip } from "../ui/textflip"
 import { ArrowRight, CheckCircle2 } from "lucide-react"
 
+type Particle = { x: number; y: number; opacity: number; scale: number }
+
 export function HeroSection() {
+  const [particles, setParticles] = useState<Particle[] | null>(null)
+
+  useEffect(() => {
+    const windowWidth = typeof window !== "undefined" ? window.innerWidth : 800
+    const windowHeight = typeof window !== "undefined" ? window.innerHeight : 600
+
+    const newParticles: Particle[] = [...Array(120)].map(() => ({
+      x: Math.random() * windowWidth,
+      y: Math.random() * windowHeight,
+      opacity: 0.2 + Math.random() * 0.5,
+      scale: 0.4 + Math.random() * 0.8,
+    }))
+    setParticles(newParticles)
+  }, [])
+
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-15 md:pt-20 overflow-hidden">
 
       <div className="absolute inset-0 pointer-events-none z-0">
-        {[...Array(120)].map((_, i) => (
+        {particles?.map((particle, i) => (
           <motion.span
             key={i}
             className="absolute w-1 h-1 bg-blue-600 rounded-full blur-[0.5px]"
             initial={{
-              x: Math.random() * window.innerWidth,
-              y: Math.random() * window.innerHeight,
-              opacity: 0.2 + Math.random() * 0.5,
-              scale: 0.4 + Math.random() * 0.8,
+              x: particle.x,
+              y: particle.y,
+              opacity: particle.opacity,
+              scale: particle.scale,
             }}
             animate={{
-              x: Math.random() * window.innerWidth,
-              y: Math.random() * window.innerHeight,
+              x: Math.random() * (typeof window !== "undefined" ? window.innerWidth : 800),
+              y: Math.random() * (typeof window !== "undefined" ? window.innerHeight : 600),
               opacity: 0.2 + Math.random() * 0.5,
               scale: 0.4 + Math.random() * 0.8,
             }}
@@ -32,7 +50,7 @@ export function HeroSection() {
               ease: "easeInOut",
             }}
           />
-        ))}
+        )) || null}
       </div>
 
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
