@@ -7,20 +7,19 @@ import { Cpu, Shield, Zap, Lock, Globe, Server } from "lucide-react"
 import Image from "next/image"
 import { useState } from "react"
 
-// Hook for mouse tracking 3D tilt effect
 function useTiltEffect() {
   const rotateX = useMotionValue(0)
   const rotateY = useMotionValue(0)
 
-  function onMouseMove(e: React.MouseEvent<HTMLDivElement, MouseEvent>) {
+  function onMouseMove(e: React.MouseEvent<HTMLDivElement, MouseEvent>) { 
     const rect = e.currentTarget.getBoundingClientRect()
     const x = e.clientX - rect.left
     const y = e.clientY - rect.top
     const centerX = rect.width / 2
     const centerY = rect.height / 2
 
-    const rotateXValue = ((y - centerY) / centerY) * -10 // Max -10 to 10 deg
-    const rotateYValue = ((x - centerX) / centerX) * 10 // Max -10 to 10 deg
+    const rotateXValue = ((y - centerY) / centerY) * -10 
+    const rotateYValue = ((x - centerX) / centerX) * 10 
 
     rotateX.set(rotateXValue)
     rotateY.set(rotateYValue)
@@ -37,7 +36,7 @@ function useTiltEffect() {
 export function FeaturesSection() {
   return (
     <section className="py-5 lg:py-10 bg-black text-white overflow-hidden relative">
-      {/* Background Ambient Noise/Gradient */}
+      
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.03),transparent_70%)] pointer-events-none" />
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
@@ -149,7 +148,7 @@ function FeatureCard({
       </div>
 
       <div className="relative z-10 h-full flex flex-col p-8">
-        {/* Header */}
+       
         <div className="flex items-center gap-4 mb-6">
           <div
             className={`p-3 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 ${iconColorMap[accentColor]}`}
@@ -159,12 +158,11 @@ function FeatureCard({
           <h3 className="text-xl  tracking-tight">{title}</h3>
         </div>
 
-        {/* Workflow Animation Area */}
+        
         <div className="flex-1 w-full relative rounded-xl border border-white/5 bg-black/20 backdrop-blur-3xl overflow-hidden mb-6 group-hover:border-white/20 transition-colors duration-500">
           {WorkflowComponent}
         </div>
 
-        {/* Content */}
         <div>
           <p className="text-zinc-300  text-sm leading-relaxed font-light tracking-wide mb-4">{description}</p>
           <div className="flex items-center text-sm font-medium text-white/60 group-hover:text-white transition-colors">
@@ -179,12 +177,12 @@ function FeatureCard({
   )
 }
 
-// 1. AI Workflow Animation Component
+
 function AIWorkflow() {
   return (
     <div className="absolute inset-0 flex items-center justify-center">
       <div className="relative w-full h-full p-4">
-        {/* Glowing nodes network */}
+        
         {[...Array(6)].map((_, i) => (
           <motion.div
             key={i}
@@ -207,7 +205,7 @@ function AIWorkflow() {
           />
         ))}
 
-        {/* Central AI Brain */}
+        
         <motion.div className="absolute inset-0 flex items-center justify-center">
           <motion.div
             className="w-16 h-16 rounded-full border-2 border-cyan-500/30 flex items-center justify-center bg-cyan-900/20 backdrop-blur-md relative z-10"
@@ -216,7 +214,7 @@ function AIWorkflow() {
           >
             <Cpu className="w-8 h-8 text-cyan-400" />
           </motion.div>
-          {/* Pulsing Rings */}
+          
           <motion.div
             className="absolute w-16 h-16 rounded-full border border-cyan-500/50"
             animate={{ scale: [1, 2], opacity: [1, 0] }}
@@ -229,7 +227,7 @@ function AIWorkflow() {
           />
         </motion.div>
 
-        {/* Connecting Lines SVG Overlay */}
+        
         <svg className="absolute inset-0 w-full h-full pointer-events-none opacity-30">
           <motion.path
             d="M50,50 Q150,100 250,50"
@@ -255,11 +253,11 @@ function AIWorkflow() {
   )
 }
 
-// 2. Security Workflow Animation Component
+
 function SecurityWorkflow() {
   return (
     <div className="absolute inset-0 flex items-center justify-center overflow-hidden">
-      {/* Grid Background */}
+      
       <div
         className="absolute inset-0 opacity-20"
         style={{
@@ -268,19 +266,19 @@ function SecurityWorkflow() {
         }}
       />
 
-      {/* Shield Container */}
+      
       <div className="relative w-32 h-40">
-        {/* Scanning Bar */}
+       
         <motion.div
           className="absolute left-0 right-0 h-1 bg-amber-400 z-20 shadow-[0_0_20px_rgba(245,158,11,0.8)]"
           animate={{ top: ["0%", "100%", "0%"] }}
           transition={{ duration: 3, ease: "easeInOut", repeat: Number.POSITIVE_INFINITY }}
         />
 
-        {/* Shield Icon */}
+        
         <Shield className="w-full h-full text-amber-500/20" strokeWidth={1} />
 
-        {/* Locked State */}
+     
         <motion.div
           className="absolute inset-0 flex items-center justify-center"
           initial={{ opacity: 0 }}
@@ -292,7 +290,7 @@ function SecurityWorkflow() {
           </div>
         </motion.div>
 
-        {/* Threat Particles being blocked */}
+        
         {[...Array(3)].map((_, i) => (
           <motion.div
             key={i}
@@ -316,11 +314,10 @@ function SecurityWorkflow() {
   )
 }
 
-// 3. Speed Workflow Animation Component
 function SpeedWorkflow() {
   return (
     <div className="absolute inset-0 flex items-center justify-center overflow-hidden bg-violet-950/30">
-      {/* Speed Lines */}
+      
         {[...Array(20)].map((_, i) => (
         <motion.div
           key={i}
@@ -343,13 +340,13 @@ function SpeedWorkflow() {
         />
       ))}
 
-      {/* Server Icons moving fast */}
+      
       <div className="flex gap-8 items-center z-10">
         <motion.div animate={{ x: [0, 10, 0] }} transition={{ duration: 0.2, repeat: Number.POSITIVE_INFINITY }}>
           <Server className="w-12 h-12 text-violet-500/50" />
         </motion.div>
 
-        {/* Data Packet */}
+        
         <motion.div
           className="w-4 h-4 bg-white rounded-full shadow-[0_0_15px_white]"
           animate={{ x: [-50, 50] }}
@@ -364,7 +361,7 @@ function SpeedWorkflow() {
         </motion.div>
       </div>
 
-      {/* Energy Burst Overlay */}
+      
       <motion.div
         className="absolute inset-0 bg-violet-500/10 mix-blend-overlay"
         animate={{ opacity: [0, 0.5, 0] }}

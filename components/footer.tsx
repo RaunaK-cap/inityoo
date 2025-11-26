@@ -1,19 +1,12 @@
 import React from "react";
-import { Sparkles, Linkedin, Twitter, Github, Mail, Instagram } from "lucide-react";
+import { Sparkles, Linkedin, Twitter, Mail, Instagram } from "lucide-react";
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-slate-50 dark:bg-black border-t border-slate-200 dark:border-slate-800 pt-12 pb-8">
+    <footer className="bg-slate-50 dark:bg-black border-t border-slate-800 pt-12 pb-8">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
         <div
-          className="
-          grid grid-cols-1 
-          sm:grid-cols-2 
-          md:grid-cols-4 
-          gap-10 md:gap-12 
-          mb-12
-        "
-        >
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 md:gap-12 mb-12">
         
           <div className="md:col-span-2">
             <div className="flex items-center gap-2 mb-4">

@@ -17,9 +17,10 @@ export function ProcessSection() {
   const isInView = useInView(ref, { once: false, amount: 0.1 })
 
   return (
-    <section id="process" className="py-20 md:py-24 bg-black" ref={ref}>
+    <section id="process" className="py-20 md:py-24 bg-black" ref={ref}>  
+      
       <div className="container mx-auto px-4 lg:px-8">
-        {/* Header */}
+        
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -32,16 +33,13 @@ export function ProcessSection() {
           </p>
         </motion.div>
 
-        {/* Timeline Container */}
         <div className="max-w-5xl mx-auto relative">
-          {/* STATIC gradient line (Yellow → Blue) */}
           <div className="absolute left-8 md:left-1/2 inset-y-0 flex justify-center pointer-events-none">
             <div
               className="w-1 bg-linear-to-b from-yellow-300 via-blue-400/50 to-blue-500/20"
             ></div>
           </div>
 
-          {/* ANIMATED fill line */}
           <motion.div
             className="absolute left-8 md:left-1/2 -translate-x-1/2 w-1 bg-linear-to-b from-yellow-300 to-blue-400"
             initial={{ height: 0 }}
@@ -63,7 +61,7 @@ export function ProcessSection() {
                   className={`relative flex flex-col md:flex-row items-start md:items-center 
                   ${isEven ? "md:flex-row" : "md:flex-row-reverse"} gap-6 md:gap-10 pl-20 md:pl-0`}
                 >
-                  {/* CARD */}
+                 
                   <motion.div
                     className="flex-1 w-full md:w-auto md:px-16"
                     whileHover={{ x: isEven ? 5 : -5 }}
@@ -73,12 +71,11 @@ export function ProcessSection() {
                       className="p-5 rounded-2xl bg-card border border-yellow-400/20 
                       hover:border-yellow-400/60 transition-all duration-500 relative overflow-hidden"
                     >
-                      {/* Glow hover */}
+                     
                       <div
                         className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-linear-to-br from-yellow-300/10 via-transparent to-transparent transition-opacity duration-500"
                       />
 
-                      {/* Content */}
                       <div className="relative z-10 flex items-start gap-4">
                         <motion.div
                           className="w-12 h-12 rounded-xl bg-yellow-300/10 
@@ -98,7 +95,6 @@ export function ProcessSection() {
                     </div>
                   </motion.div>
 
-                  {/* NUMBER BADGE */}
                   <motion.div
                     className="absolute 
                     left-2 md:left-1/2 
@@ -116,7 +112,6 @@ export function ProcessSection() {
                     <span className="text-white font-bold text-base md:text-lg">{index + 1}</span>
                   </motion.div>
 
-                  {/* Spacer */}
                   <div className="flex-1 hidden md:block"></div>
                 </motion.div>
               )

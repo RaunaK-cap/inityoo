@@ -148,6 +148,22 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
+
+.hide-scrollbar::-webkit-scrollbar { display: none; }
+.hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+@keyframes gradientShift {
+  0% { background-position: 0% 0%; }
+  50% { background-position: 100% 100%; }
+  100% { background-position: 0% 0%; }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradientShift 18s ease infinite;
+}
+
+
 @layer base {
   * {
    

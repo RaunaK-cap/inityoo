@@ -10,7 +10,6 @@ export const FinalCtaSection: React.FC = () => {
         
           <div className="relative rounded-3xl overflow-hidden bg-linear-to-br from-yellow-100/40 via-transparent to-transparent shadow-2xl px-8 py-16 md:px-16 text-center">
             
-            {/* Background Patterns */}
             <div className="absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
             <div className="absolute bottom-0 right-0 translate-x-1/2 translate-y-1/2 w-64 h-64 bg-purple-500/30 rounded-full blur-3xl"></div>
 
