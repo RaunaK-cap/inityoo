@@ -26,7 +26,7 @@ const services: Service[] = [
   {
     title: "Mobile Apps",
     description: "Native seamless user experiences.",
-    image: "Mobileapp2.jpg",
+    image: "mobileapp2.jpg",
   },
   {
     title: "App Revamps",
