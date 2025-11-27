@@ -31,12 +31,14 @@ const services: Service[] = [
   {
     title: "App Revamps",
     description: "Modernize optimize digital assets.",
-    image: "https://cdn.dribbble.com/userupload/15482034/file/original-d5820530309ce0b00a6fded7d80feae7.png?resize=1600x1200&vertical=center",
+    image:
+      "https://cdn.dribbble.com/userupload/15482034/file/original-d5820530309ce0b00a6fded7d80feae7.png?resize=1600x1200&vertical=center",
   },
   {
     title: "UI/UX Design",
     description: "Intuitive designs users love.",
-    image: "https://cdn.dribbble.com/userupload/17402714/file/original-6d32be8a63486860f02b167daecc967e.png?resize=2048x1536&vertical=center",
+    image:
+      "https://cdn.dribbble.com/userupload/17402714/file/original-6d32be8a63486860f02b167daecc967e.png?resize=2048x1536&vertical=center",
   },
   {
     title: "SEO Services",
@@ -51,12 +53,12 @@ const services: Service[] = [
   {
     title: "AI Integration",
     description: "Cutting-edge features integrated.",
-    image: "/AI_integration.jpg",
+    image: "/AI_integration4.jpg",
   },
   {
-    title: "CRM & ERP",
-    description: "Custom enterprise systems tailored.",
-    image: "/crm&rmp.jpg",
+    title: "Scaling Infrastucture",
+    description: "Scaling production grade infrastructure for Apps & website ",
+    image: "/Scaling.jpg",
   },
 ];
 
@@ -88,8 +90,8 @@ function ServiceCard({ service }: { service: Service }) {
         style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
         onMouseMove={onMouseMove}
         onMouseLeave={onMouseLeave}
-        className="group relative flex flex-col rounded-xl border border-white/10 hover:border-white/20 transition-all duration-500 overflow-hidden backdrop-blur-sm h-[420px]">
-       
+        className="group relative flex flex-col rounded-xl border border-white/10 hover:border-white/20 transition-all duration-500 overflow-hidden backdrop-blur-sm h-[420px]"
+      >
         <div className="relative  h-full w-full m-1 rounded-xl overflow-hidden">
           <Image
             src={service.image ?? "/placeholder.svg"}
@@ -100,14 +102,14 @@ function ServiceCard({ service }: { service: Service }) {
           <div className="absolute inset-0 " />
         </div>
 
-     
         <div className="absolute inset-0 p-5 z-20 flex flex-col justify-between">
-          <div className="flex justify-end">
-            <ArrowUpRight className="w-4 h-4 text-white/70 opacity-70" />
+          <div className="flex justify-end ">
+            <ArrowUpRight className="w-8 h-10  text-2xl text-white/70 opacity-70" />
           </div>
-
           <div className="space-y-2">
-            <h3 className="text-lg font-bold text-neutral-100">{service.title}</h3>
+            <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-xl p-3">
+              <h3 className="text-lg font-bold text-white">{service.title}</h3>
+            </div>
           </div>
         </div>
       </motion.div>
@@ -152,7 +154,10 @@ function HorizontalScroll() {
         style={{ scrollBehavior: "smooth" }}
       >
         {services.map((service, index) => (
-          <div key={index} className="snap-start shrink-0 w-[260px] md:w-[300px]">
+          <div
+            key={index}
+            className="snap-start shrink-0 w-[260px] md:w-[300px]"
+          >
             <ServiceCard service={service} />
           </div>
         ))}
@@ -160,7 +165,6 @@ function HorizontalScroll() {
     </div>
   );
 }
-
 
 export function ServicesVideos() {
   const videos = [
@@ -184,13 +188,11 @@ export function ServicesVideos() {
   return (
     <section className="py-5 bg-black text-white">
       <div className="container mx-auto px-6">
-
         <h2 className="text-center md:text-left text-xl md:text-xl [font-family:var(--font-pixel)] tracking-tight mb-10">
           How Our <span className="text-yellow-400">Services Work</span>
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-1 gap-6 md:gap-8">
-
           <div className="relative group md:col-span-1 rounded-2xl overflow-hidden bg-white/5 border border-white/10 h-[380px] md:h-[520px]">
             <video
               src={videos[0].src}
@@ -201,8 +203,7 @@ export function ServicesVideos() {
               className="w-full h-full object-cover transition-all duration-500 group-hover:brightness-[0.55]"
             />
 
-            <div
-              className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
+            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
               <p className="text-2xl md:text-sm font-bold text-white drop-shadow-lg">
                 {videos[0].title}
               </p>
@@ -210,7 +211,6 @@ export function ServicesVideos() {
           </div>
 
           <div className="grid md:grid-cols-2 w-full gap-5">
-
             <div className="relative group rounded-xl overflow-hidden bg-white/5 border border-white/10 h-[260px] md:h-[520px]">
               <video
                 src={videos[1].src}
@@ -221,15 +221,13 @@ export function ServicesVideos() {
                 className="w-full h-full object-cover transition-all duration-500 group-hover:brightness-[0.55]"
               />
 
-              <div
-                className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
+              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
                 <p className="text-xl md:text-sm font-semibold text-white drop-shadow-lg">
                   {videos[1].title}
                 </p>
               </div>
             </div>
 
-            
             <div className="relative group rounded-xl overflow-hidden bg-white/5 border border-white/10 h-[260px] md:h-[520px]">
               <video
                 src={videos[2].src}
@@ -240,22 +238,18 @@ export function ServicesVideos() {
                 className="w-full h-full object-cover transition-all duration-500 group-hover:brightness-[0.55]"
               />
 
-              <div
-                className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
+              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
                 <p className="text-xl md:text-sm font-semibold text-white drop-shadow-lg">
                   {videos[2].title}
                 </p>
               </div>
             </div>
-
           </div>
-
         </div>
       </div>
     </section>
   );
 }
-
 
 function MobileStack() {
   return (
@@ -269,12 +263,10 @@ function MobileStack() {
   );
 }
 
-
 export function ServicesSection() {
   return (
     <section id="services" className="py-24 md:py-32 bg-black text-white">
       <div className="container mx-auto px-6 md:px-56">
-        
         <div className="text-center md:text-left mb-16">
           <h2 className="text-4xl md:text-4xl tracking-tighter [font-family:var(--font-pixel)]">
             Digital <span className="text-yellow-400 ">Solutions</span>
@@ -292,5 +284,3 @@ export function ServicesSection() {
     </section>
   );
 }
-
-
