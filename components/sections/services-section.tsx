@@ -56,7 +56,7 @@ const services: Service[] = [
     image: "/AI_integration4.jpg",
   },
   {
-    title: "Scaling Infrastucture",
+    title: "Scaling Infrastructure",
     description: "Scaling production grade infrastructure for Apps & website ",
     image: "/Scaling.jpg",
   },

@@ -19,7 +19,7 @@ export const FinalCtaSection: React.FC = () => {
             AI-powered solutions. Book a discovery call today.
           </p>
 
-          <div className="space-y-20 mt-10 ">
+          <div className="space-y-20 mt-10 mb-5 ">
           <Booking />
         </div>
 
