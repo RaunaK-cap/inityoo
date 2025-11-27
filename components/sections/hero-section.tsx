@@ -24,7 +24,8 @@ export function HeroSection() {
   }, [])
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-15 md:pt-20 overflow-hidden">
+    
+    <section className="relative min-h-screen flex items-center justify-center pt-15 md:pt-20 overflow-hidden bg-black text-white">
 
       <div className="absolute inset-0 pointer-events-none z-0">
         {particles?.map((particle, i) => (
@@ -65,9 +66,9 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/10 text-sm text-muted-foreground mb-8"
+            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/10 text-sm text-neutral-400 mb-8"
           >
-            <span className="relative flex h-2 w-2">
+            <span className="relative flex h-2 w-2 ">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-400"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-yellow-500"></span>
             </span>
@@ -91,7 +92,7 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-xs md:text-sm text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed"
+            className="text-xs md:text-sm text-neutral-400 mb-10 max-w-2xl mx-auto leading-relaxed"
           >
             Inityo is a full-stack digital agency delivering AI-powered, automated, and scalable
             solutions tailored for the US market. Stop configuring, start innovating.

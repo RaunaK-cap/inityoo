@@ -277,9 +277,9 @@ export function ServicesSection() {
         
         <div className="text-center md:text-left mb-16">
           <h2 className="text-4xl md:text-4xl tracking-tighter [font-family:var(--font-pixel)]">
-            Digital <span className="text-yellow-400">Solutions</span>
+            Digital <span className="text-yellow-400 ">Solutions</span>
           </h2>
-          <p className="text-md text-zinc-400 max-w-xl leading-relaxed">
+          <p className="text-sm text-zinc-400 max-w-xl space-y-2 leading-relaxed">
             Comprehensive digital services engineered for performance.
           </p>
         </div>

@@ -3,14 +3,12 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
-import { useTheme } from "next-themes";
 import { motion, AnimatePresence } from "framer-motion";
 
 export function Navbar() {
   const [mounted, setMounted] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const { theme, setTheme } = useTheme();
 
   useEffect(() => {
     setMounted(true);
@@ -46,11 +44,12 @@ export function Navbar() {
         }}
         style={{ originX: 0.5 }}
         transition={{ duration: 0.35, ease: [0.25, 0.1, 0.25, 1] }}
-        className={`mx-auto w-full max-w-[1200px] rounded-2xl backdrop-blur-2xl border transition-all duration-200 ${
-          isScrolled
-            ? "bg-background/80 border-white/10 shadow-[0_20px_45px_rgba(0,0,0,0.35)]"
-            : "bg-background/30 shadow-[0_8px_25px_rgba(0,0,0,0.15)]"
-        }`}
+        className={`mx-auto w-full max-w-[1200px] rounded-2xl backdrop-blur-2xl  transition-all duration-200 
+          ${
+            isScrolled
+              ? "bg-[#0f0f0f]/80 border-white/10 shadow-[0_20px_45px_rgba(0,0,0,0.35)]"
+              : "bg-[#0f0f0f]/50 shadow-[0_8px_25px_rgba(0,0,0,0.15)]"
+          }`}
       >
         <div
           className={`flex items-center justify-between transition-all duration-500 px-6 lg:px-8 ${
@@ -118,9 +117,8 @@ export function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
-            className={`md:hidden mt-1 mx-4 rounded-2xl border border-white/10 backdrop-blur-2xl overflow-hidden ${
-              isScrolled ? "bg-background/90" : "bg-background/80"
-            }`}
+            className={`md:hidden mt-1 mx-4 rounded-2xl border border-white/10 backdrop-blur-2xl overflow-hidden 
+              ${isScrolled ? "bg-[#0f0f0f]/90" : "bg-[#0f0f0f]/80"}`}
           >
             <div className="px-6 py-6 space-y-4">
               {navLinks.map((link, index) => (
@@ -136,6 +134,7 @@ export function Navbar() {
                   {link.name}
                 </motion.a>
               ))}
+
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}

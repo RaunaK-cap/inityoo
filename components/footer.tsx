@@ -3,7 +3,7 @@ import { Sparkles, Linkedin, Twitter, Mail, Instagram } from "lucide-react";
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-slate-50 dark:bg-black border-t border-slate-800 pt-12 pb-8">
+    <footer className="bg-black border-t border-slate-800 pt-12 pb-8">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
         <div
           className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 md:gap-12 mb-12">
@@ -13,12 +13,12 @@ export const Footer: React.FC = () => {
               <div className="w-7 h-7 rounded flex items-center justify-center">
                 <Sparkles className="w-4 h-4 text-white" />
               </div>
-              <span className="text-2xl [font-family:var(--font-pixel)] text-slate-900 dark:text-yellow-300">
+              <span className="text-2xl [font-family:var(--font-pixel)] text-yellow-300">
                 Inityo
               </span>
             </div>
 
-            <p className="text-slate-600 dark:text-slate-400 max-w-sm text-sm leading-relaxed mb-5">
+            <p className="text-slate-400 max-w-sm text-sm leading-relaxed mb-5">
               Empowering businesses with AI-driven automation, custom web
               development, and strategic digital growth.
             </p>
@@ -29,8 +29,8 @@ export const Footer: React.FC = () => {
                 <a
                   key={i}
                   href="#"
-                  className="p-2 rounded-md bg-slate-200/60 dark:bg-slate-900 
-                    hover:bg-yellow-300 hover:text-black dark:hover:bg-yellow-300 
+                  className="p-2 rounded-md bg-slate-900 text-white
+                     hover:bg-yellow-300/40 
                     transition-colors"
                 >
                   <Icon size={18} />
@@ -39,7 +39,7 @@ export const Footer: React.FC = () => {
             </div>
 
        
-            <div className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
+            <div className="flex items-center gap-2 text-sm text-slate-400">
               <Mail size={16} className="text-yellow-300" />
               <span>inityotech@gmail.com</span>
             </div>
@@ -49,10 +49,10 @@ export const Footer: React.FC = () => {
           <div
             className="grid grid-cols-2 gap-10 md:grid-cols-2 md:gap-12 md:col-span-2">
             <div>
-              <h4 className=" text-slate-900 dark:text-white mb-3">
+              <h4 className=" text-white mb-3">
                 Services
               </h4>
-              <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-400">
+              <ul className="space-y-2 text-sm text-slate-400">
                 <li>
                   <a
                     href="#"
@@ -90,10 +90,10 @@ export const Footer: React.FC = () => {
 
 
             <div>
-              <h4 className=" text-slate-900 dark:text-white mb-3">
+              <h4 className=" text-white mb-3">
                 Company
               </h4>
-              <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-400">
+              <ul className="space-y-2 text-sm text-slate-400">
                 <li>
                   <a
                     href="#"
@@ -132,12 +132,12 @@ export const Footer: React.FC = () => {
         </div>
 
 
-        <div className="border-t border-slate-200 dark:border-slate-800 pt-5 flex flex-col md:flex-row justify-between items-center gap-3">
-          <p className="text-xs text-slate-500 dark:text-slate-400 text-center md:text-left">
+        <div className="border-t border-slate-800 pt-5 flex flex-col md:flex-row justify-between items-center gap-3">
+          <p className="text-xs text-slate-400 text-center md:text-left">
             © {new Date().getFullYear()} Inityo Agency. All rights reserved.
           </p>
 
-          <div className="flex gap-5 text-xs text-slate-500 dark:text-slate-400">
+          <div className="flex gap-5 text-xs text-slate-400">
             <a href="#" className="hover:text-yellow-300 transition-colors">
               Privacy Policy
             </a>

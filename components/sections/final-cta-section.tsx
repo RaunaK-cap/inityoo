@@ -5,7 +5,7 @@ import { ArrowRight, Mail } from 'lucide-react';
 
 export const FinalCtaSection: React.FC = () => {
   return (
-    <section id="contact" className="py-24 relative">
+    <section id="contact" className="py-24 relative bg-black">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         
           <div className="relative rounded-3xl overflow-hidden bg-linear-to-br from-yellow-100/40 via-transparent to-transparent shadow-2xl px-8 py-16 md:px-16 text-center">

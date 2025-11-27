@@ -28,16 +28,20 @@ export const WhyChooseSection = () => {
   ]
 
   return (
-    <section id="about" className="py-15 md:py-28 relative overflow-hidden bg-dark-950">
-      <div className="absolute right-10 bg-yellow-200/10 top-0 w-1/2 h-full bg-brand-500/5 blur-[150px]" />
+    <section
+      id="about"
+      className="py-15 md:py-28 relative overflow-hidden bg-black"
+    >
+      <div className="absolute right-10 top-0 w-1/2 h-full bg-yellow-200/10 blur-[150px]" />
 
       <div className="max-w-5xl mx-auto px-4 relative z-10">
         <div className="grid md:grid-cols-2 gap-12 lg:gap-24 items-center">
           <div>
             <h2 className="text-2xl md:text-4xl [font-family:var(--font-pixel)] text-white mb-8 md:mb-12 leading-tight md:tracking-tight tracking-widest">
               Why Global Brands Trust{" "}
-              <span className="text-brand-500 border-b-4 border-brand-500/30 text-yellow-300">Inityo</span>
+              <span className="border-b-4 border-yellow-300/30 text-yellow-300">Inityo</span>
             </h2>
+
             <div className="space-y-8 md:space-y-10">
               {USP_POINTS.map((point, i) => (
                 <motion.div
@@ -48,29 +52,34 @@ export const WhyChooseSection = () => {
                   className="flex gap-6 group"
                 >
                   <div className="mt-1 shrink-0">
-                    <div className="w-12 h-12 rounded-full bg-dark-900 border border-white/10 flex items-center justify-center group-hover:border-brand-500 transition-colors">
-                      <CheckCircle2 className="w-5 h-5 text-brand-400" />
+                    <div
+                      className="w-12 h-12 rounded-full bg-black border border-white/10 flex items-center justify-center group-hover:border-yellow-300 transition-colors">
+                      <CheckCircle2 className="w-5 h-5 text-yellow-300" />
                     </div>
                   </div>
+
                   <div>
-                    <h4 className=" md:text-lg  text-white mb-2 group-hover:text-brand-200 transition-colors">
+                    <h4 className="md:text-lg text-white mb-2 group-hover:text-yellow-200 transition-colors">
                       {point.title}
                     </h4>
-                    <p className="text-gray-400 leading-relaxed text-xs md:text-sm">{point.text}</p>
+                    <p className="text-gray-400 leading-relaxed text-xs md:text-xs">{point.text}</p>
                   </div>
                 </motion.div>
               ))}
             </div>
 
-            <div className="mt-12 p-6 md:p-8 bg-linear-to-r from-dark-900 to-transparent rounded-xl border border-yellow-100/20 backdrop-blur-sm">
+            <div
+              className="mt-12 p-6 md:p-8 bg-gradient-to-r from-[#0d0d0d] to-transparent rounded-xl border border-yellow-100/20 backdrop-blur-sm"
+            >
               <h5 className="text-white [font-family:var(--font-pixel)] mb-6 flex items-center gap-3 text-xs">
-                <Zap className="w-5 h-5 text-brand-400  text-yellow-300" /> Additional Capabilities
+                <Zap className="w-5 h-5 text-yellow-300" /> Additional Capabilities
               </h5>
+
               <div className="flex flex-wrap gap-2 md:gap-3">
                 {DETAILED_FEATURES.map((f) => (
                   <span
                     key={f}
-                    className="text-xs  text-gray-300 bg-white/5 px-3 py-1.5 rounded-md border border-white/5 hover:border-brand-500/30 hover:text-white transition-all cursor-default"
+                    className="text-xs text-gray-300 bg-white/5 px-3 py-1.5 rounded-md border border-white/5 hover:border-yellow-300/30 hover:text-white transition-all cursor-default"
                   >
                     {f}
                   </span>
@@ -79,18 +88,21 @@ export const WhyChooseSection = () => {
             </div>
           </div>
 
+
           <div className="relative h-[400px] md:h-[600px] flex items-center justify-center">
-            <div className="absolute inset-0 bg-linear-to-tr from-brand-900/20 to-transparent rounded-full blur-3xl" />
+
+            <div className="absolute inset-0 bg-gradient-to-tr from-yellow-300/20 to-transparent rounded-full blur-3xl" />
 
             <div className="relative w-full h-full flex items-center justify-center">
+
               <motion.div
                 initial={{ scale: 0 }}
                 whileInView={{ scale: 1 }}
-                className="absolute w-24 h-24 md:w-32 md:h-32 rounded-full bg-dark-900 border-4 border-brand-500 flex items-center justify-center z-20 shadow-[0_0_60px_rgba(132,204,22,0.3)]"
-              >
+
+                className="absolute w-24 h-24 md:w-32 md:h-32 rounded-full bg-black border-4 border-yellow-300 flex items-center justify-center z-20 shadow-[0_0_60px_rgba(255,212,70,0.3)]" >
                 <div className="text-center">
                   <div className="text-2xl md:text-3xl font-black text-yellow-300 tracking-tighter">I</div>
-                  <div className="text-[8px] md:text-[10px] text-brand-400 font-bold uppercase tracking-widest">
+                  <div className="text-[8px] md:text-[10px] text-white font-bold uppercase tracking-widest">
                     Core
                   </div>
                 </div>
@@ -110,7 +122,7 @@ export const WhyChooseSection = () => {
                   animate={{ rotate: 360 }}
                   transition={{
                     duration: 20,
-                    repeat: Number.POSITIVE_INFINITY,
+                    repeat: Infinity,
                     ease: "linear",
                     delay: -node.delay * 2,
                   }}
@@ -120,20 +132,25 @@ export const WhyChooseSection = () => {
                     animate={{ rotate: -360 }}
                     transition={{
                       duration: 20,
-                      repeat: Number.POSITIVE_INFINITY,
+                      repeat: Infinity,
                       ease: "linear",
                       delay: -node.delay * 2,
                     }}
                   >
-                    <div className="w-12 h-12 md:w-16 md:h-16 bg-dark-800 rounded-2xl border border-white/10 flex items-center justify-center shadow-2xl hover:border-brand-500 transition-colors">
-                      <node.icon className="w-5 h-5 md:w-6 md:h-6 text-brand-400" />
+                    <div
+                 
+                      className="w-12 h-12 md:w-16 md:h-16 bg-black rounded-2xl border border-white/10 flex items-center justify-center shadow-2xl hover:border-yellow-300 transition-colors"
+                    >
+                      <node.icon className="w-5 h-5 md:w-6 md:h-6 text-yellow-300" />
                     </div>
-                    <span className="text-[10px] md:text-xs font-bold text-gray-400 bg-dark-950 px-2 py-1 rounded border border-white/5">
+
+                    <span
+                    className="text-[10px] md:text-xs font-bold text-gray-400 bg-black px-2 py-1 rounded border border-white/5">
                       {node.label}
                     </span>
                   </motion.div>
 
-                  <div className="absolute top-0 left-0 h-28 md:h-40 w-[1] bg-linear-to-b from-brand-500/20 to-transparent origin-bottom rotate-180" />
+                  <div className="absolute top-0 left-0 h-28 md:h-40 w-[1] bg-gradient-to-b from-yellow-300/20 to-transparent origin-bottom rotate-180" />
                 </motion.div>
               ))}
 

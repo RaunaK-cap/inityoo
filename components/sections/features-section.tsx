@@ -136,7 +136,6 @@ function FeatureCard({
       onMouseEnter={() => setIsHovered(true)}
       className={`relative group h-[400px] w-80 rounded-3xl bg-zinc-900 border border-white/10 overflow-hidden transition-colors duration-500 ${colorMap[accentColor]}`}
     >
-      {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
         <Image
           src={`/.jpg?height=800&width=600&query=${encodeURIComponent(imageQuery)}`}
@@ -164,7 +163,7 @@ function FeatureCard({
         </div>
 
         <div>
-          <p className="text-zinc-300  text-sm leading-relaxed font-light tracking-wide mb-4">{description}</p>
+          <p className="text-zinc-300  text-xs leading-relaxed font-light tracking-wide mb-4">{description}</p>
           <div className="flex items-center text-sm font-medium text-white/60 group-hover:text-white transition-colors">
             <span>Learn more</span>
             <motion.span className="ml-2" animate={{ x: isHovered ? 5 : 0 }}>
@@ -264,9 +263,7 @@ function SecurityWorkflow() {
           backgroundImage: "radial-gradient(#f59e0b 1px, transparent 1px)",
           backgroundSize: "20px 20px",
         }}
-      />
-
-      
+      />    
       <div className="relative w-32 h-40">
        
         <motion.div
@@ -275,9 +272,7 @@ function SecurityWorkflow() {
           transition={{ duration: 3, ease: "easeInOut", repeat: Number.POSITIVE_INFINITY }}
         />
 
-        
         <Shield className="w-full h-full text-amber-500/20" strokeWidth={1} />
-
      
         <motion.div
           className="absolute inset-0 flex items-center justify-center"
@@ -290,7 +285,6 @@ function SecurityWorkflow() {
           </div>
         </motion.div>
 
-        
         {[...Array(3)].map((_, i) => (
           <motion.div
             key={i}

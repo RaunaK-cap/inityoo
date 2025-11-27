@@ -17,8 +17,11 @@ export function ProcessSection() {
   const isInView = useInView(ref, { once: false, amount: 0.1 })
 
   return (
-    <section id="process" className="py-20 md:py-24 bg-black" ref={ref}>  
-      
+    <section
+      id="process"
+      className="py-20 md:py-24 bg-black text-white"
+      ref={ref}
+    >
       <div className="container mx-auto px-4 lg:px-8">
         
         <motion.div
@@ -35,9 +38,7 @@ export function ProcessSection() {
 
         <div className="max-w-5xl mx-auto relative">
           <div className="absolute left-8 md:left-1/2 inset-y-0 flex justify-center pointer-events-none">
-            <div
-              className="w-1 bg-linear-to-b from-yellow-300 via-blue-400/50 to-blue-500/20"
-            ></div>
+            <div className="w-1 bg-linear-to-b from-yellow-300 via-blue-400/50 to-blue-500/20" />
           </div>
 
           <motion.div
@@ -59,22 +60,16 @@ export function ProcessSection() {
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6 }}
                   className={`relative flex flex-col md:flex-row items-start md:items-center 
-                  ${isEven ? "md:flex-row" : "md:flex-row-reverse"} gap-6 md:gap-10 pl-20 md:pl-0`}
+                    ${isEven ? "md:flex-row" : "md:flex-row-reverse"} gap-6 md:gap-10 pl-20 md:pl-0`}
                 >
-                 
                   <motion.div
                     className="flex-1 w-full md:w-auto md:px-16"
                     whileHover={{ x: isEven ? 5 : -5 }}
                     transition={{ type: "spring", stiffness: 300 }}
                   >
-                    <div
-                      className="p-5 rounded-2xl bg-card border border-yellow-400/20 
-                      hover:border-yellow-400/60 transition-all duration-500 relative overflow-hidden"
-                    >
-                     
-                      <div
-                        className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-linear-to-br from-yellow-300/10 via-transparent to-transparent transition-opacity duration-500"
-                      />
+                    <div className="p-5 rounded-2xl bg-[#111] border border-yellow-400/20
+                        hover:border-yellow-400/60 transition-all duration-500 relative overflow-hidden group">
+                      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-linear-to-br from-yellow-300/10 via-transparent to-transparent transition-opacity duration-500" />
 
                       <div className="relative z-10 flex items-start gap-4">
                         <motion.div
@@ -96,14 +91,17 @@ export function ProcessSection() {
                   </motion.div>
 
                   <motion.div
-                    className="absolute 
-                    left-2 md:left-1/2 
-                    md:-translate-x-1/2 
-                    w-12 h-12 md:w-16 md:h-16 
-                    rounded-full bg-background 
-                    border-4 border-yellow-400 
-                    flex items-center justify-center 
-                    shadow-lg z-20"
+                    className="
+                      absolute 
+                      left-2 md:left-1/2 
+                      md:-translate-x-1/2 
+                      w-12 h-12 md:w-16 md:h-16 
+                      rounded-full 
+                      bg-[#0d0d0d]
+
+                      border-4 border-yellow-400 
+                      flex items-center justify-center 
+                      shadow-lg z-20"
                     initial={{ scale: 0 }}
                     whileInView={{ scale: 1 }}
                     transition={{ type: "spring", stiffness: 200 }}
